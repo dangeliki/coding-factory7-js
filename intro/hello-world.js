@@ -1,0 +1,2 @@
+const textHello = document.getElementById("textHello")    //Αντιστοιχούμε έναν κόμβο του dom σε μια προγραμματιστική μεταβλητή για να μπορούμε να τον χειριστούμε
+textHello.innerHTML = "<strong>Hello World</strong>"
