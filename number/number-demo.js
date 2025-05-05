@@ -24,3 +24,14 @@ if (isNaN(NaN)) {
 
 console.log(Number.parseInt("44"))
 console.log(parseInt("42"))
+
+console.log(Number.parseFloat("44.8"))
+console.log(parseFloat("45.1"))
+
+const num1 = 0.1 + 0.2
+const num2 = 0.3
+
+function compareFloatingPoints(a,b) {
+  return Math.abs(a - b) < Number.EPSILON
+}
+console.log(compareFloatingPoints(num1,num2))
