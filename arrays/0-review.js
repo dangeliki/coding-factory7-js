@@ -28,9 +28,9 @@ const citiesCopy1 = JSON.parse(JSON.stringify(cities))
 const cities2 = structuredClone(cities)
 
 // Shallow Copies -- Spread Operator
-const cities3 = [...cities]
-let maxVal = Math.max(...[1, 2, 3, 4])
-let maxIndex = cities.indexOf(maxVal)
+const nums = [1, 2, 3, 4]
+let maxVal = Math.max(...nums)
+let maxIndex = nums.indexOf(maxVal)
 console.log(`Max Value: ${maxVal}, Max Index: ${maxIndex}`)
 
 
