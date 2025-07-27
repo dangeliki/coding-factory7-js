@@ -1,21 +1,88 @@
-let counter = 0;
+const DEFAULT = 0
+let counter = DEFAULT
 
-const btnDecr = document.getElementById('btnDecr')
-const btnReset = document.getElementById('btnReset')
-const btnIncr = document.getElementById('btnIncr')
-let counterDOM = document.getElementById('counter')
+window.addEventListener('DOMContentLoaded',function() {
+    this.document.querySelector('#btnDecr').addEventListener('click', () => onDecreaseClicked())
+    this.document.querySelector('#btnReset').addEventListener('click', () => onResetClicked())
+    this.document.querySelector('#btnIncr').addEventListener('click', () => onIncreaseClicked())
+})
 
-btnDecr.addEventListener('click',function() {
+/**
+ * Handler - Controller
+ */
+function onDecreaseClicked() {
+    decreaseCounter()
+}
+function onResetClicked() {
+    resetCounter()
+}
+function onIncreaseClicked() {
+    increaseCounter()
+}
+
+/**
+ * Model
+ */
+function decreaseCounter() {
     counter--;
-    counterDOM.innerHTML = counter
-})
-
-btnReset.addEventListener('click' , function() {
+    render()
+}
+function resetCounter() {
     counter = 0;
-    counterDOM.innerHTML = counter
-})
-
-btnIncr.addEventListener('click' , function () {
+    render()
+}
+function increaseCounter() {
     counter++;
-    counterDOM.innerHTML = counter
-})
+    render()
+}
+
+/**
+ * View
+ */
+function render() {
+    const counterDOM = document.querySelector('#counter')
+    counterDOM.textContent = counter
+    styleCounter(counterDOM)
+}
+
+function styleCounter(counterDOM) {
+    counterDOM.classList.toggle('color-green', counter > 0)
+    counterDOM.classList.toggle('color-red', counter < 0)
+    counterDOM.classList.toggle('color-black', counter === 0)
+}
+function styleCounter(counterDOM) {
+    if (counter == 0) {
+        counterDOM.style.color = 'black'
+    } else if (counter > 0) {
+        counterDOM.style.color = 'green'
+    } else {
+        counterDOM.style.color = 'red'
+    }
+}
+
+
+
+
+
+// let counter = 0;
+
+// const btnDecr = document.getElementById('btnDecr')
+// const btnReset = document.getElementById('btnReset')
+// const btnIncr = document.getElementById('btnIncr')
+// let counterDOM = document.getElementById('counter')
+
+// btnDecr.addEventListener('click',function() {
+//     counter--;
+//     counterDOM.innerHTML = counter
+// })
+
+// btnReset.addEventListener('click' , function() {
+//     counter = 0;
+//     counterDOM.innerHTML = counter
+// })
+
+// btnIncr.addEventListener('click' , function () {
+//     counter++;
+//     counterDOM.innerHTML = counter
+// })
+
