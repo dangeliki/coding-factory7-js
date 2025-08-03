@@ -97,5 +97,5 @@ function printGRDate() {
    * View Function
    */
   function reset() {
-    document.querySelector('inputNote').value = ""
+    document.querySelector('#inputNote').value = ""
   }
