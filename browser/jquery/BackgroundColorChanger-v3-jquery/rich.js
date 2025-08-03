@@ -48,6 +48,7 @@ function getRandomBgColor() {
 /**
  * View
  * Fills the values of the corresponding HTML Elements  
+ * 
  */ 
 function showBackground(bgColor) {
     document.querySelector('#hex').innerHTML = bgColor
